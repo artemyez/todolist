@@ -1,0 +1,13 @@
+<div class="row p-3 px-md-2">
+  <div class="col-lg-2">
+    <%= form_with model: Task.new  do |f| %>
+    <%= f.hidden_field :list_id, value: params[:id] %>
+    <div class="form-group">
+      <%= f.label "Enter what to do" %>
+      <%= f.text_field :title, class: "form-control", required: true %>
+    </div>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= link_to "Back", root_path, class: "btn btn-light" %>
+    <% end %>
+  </div>
+</div>
