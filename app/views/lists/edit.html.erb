@@ -1,12 +1,10 @@
-<div class="row p-3 px-md-2">
-  <div class="col-lg-2">
-    <%= form_with model: @list do |f| %>
-      <div class="form-group">
-        <%= f.label "list name" %><br>
-        <%= f.text_field :title, class: "form-control", required: true %>
-      </div>
-      <%= f.submit "Save", class: "btn btn-primary" %>
-      <%= link_to "Back", root_path, class: "btn btn-light" %>
-    <% end %>
+<div class="col-sm-3 p-3 border bg-light">
+  <%= form_with model: @list do |f| %>
+    <div class="form-group">
+      <%= f.label "Enter your changes" %><br>
+      <%= f.text_field :title, class: "form-control", required: true %>
     </div>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= link_to "Back", root_path, class: "btn btn-light" %>
+  <% end %>
 </div>

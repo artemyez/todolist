@@ -1,11 +1,7 @@
-<div class="row p-3 px-md-2">
-  <div class="col-lg-2">
+  <div class="form-inline">
     <%= form_with model: List.new do |f| %>
-      <div class="form-group">
-        <%= f.label "Enter new list name" %><br>
-        <%= f.text_field :title, class: "form-control", required: true %>
-      </div>
+      <%= f.text_field :title, class: "form-control form-control-sm mr-3 w-75",
+                            placeholder: "Enter new list name", required: true %>
       <%= f.submit "Save", class: "btn btn-primary" %>
     <% end %>
-    </div>
-</div>
+  </div>

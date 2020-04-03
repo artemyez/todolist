@@ -1,25 +1,9 @@
-<div class="row p-3 col px-md-4">
-  <div class="col-sm-3 p-3 border bg-light">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Done</th>
-          <th scope="col">To Do</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-    <tbody>
-      <% @list.tasks.each do |d| %>
-      <tr>
-        <td><%= link_to d.done, complete_task_path(d, d.id), method: :patch %></td>
-        <td><%= link_to d.title, edit_task_path(d) %></td>
-        <td><%= link_to 'Delete', task_path(d), method: :delete,
-          data: { confirm: 'Are you sure?' }, class: 'btn btn-light'%></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+<% def strike_link(d) %>
+  <% link_to d.title, complete_task_path(d, d.id), method: :patch %>
+<% end %>
+<div class="col-sm-3 p-3 border bg-light">
+  <h3>What to do?</h3>
+  <%= render 'tasks/show' %><br>
+  <%= render 'tasks/new' %><br>
+  <%= link_to "See all lists", root_path, class: "btn btn-primary btn-sm btn-block" %>
 </div>
-
-<%= render 'tasks/new' %>
