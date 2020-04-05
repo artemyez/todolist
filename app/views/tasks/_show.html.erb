@@ -1,18 +1,22 @@
+<% def strike_link(d) %>
+  <% link_to d.title, complete_task_path(d, d.id), method: :patch %>
+<% end %>
+
 <ul class="list-group">
   <% @list.tasks.each do |d| %>
   <li class="list-group-item">
     <% if d.done %>
       <span class="name"><strike><%= strike_link(d) %></strike></span>
-    <% elsif %>
+    <% else %>
       <%= strike_link(d) %>
     <% end %>
-      <button class="btn btn-default btn-xs pull-right remove-item">
-        <%= link_to '', task_path(d), method: :delete,
-          data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove'%>
-      </button>
-      <button class="btn btn-default btn-xs pull-right edit-item">
-        <%= link_to '', edit_task_path(d), class: 'glyphicon glyphicon-cog' %>
-      </button>
+    <button class="btn btn-default btn-xs pull-right remove-item">
+      <%= link_to '', task_path(d), method: :delete,
+        data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove'%>
+    </button>
+    <button class="btn btn-default btn-xs pull-right edit-item">
+      <%= link_to '', edit_task_path(d), class: 'glyphicon glyphicon-cog' %>
+    </button>
   </li>
   <% end %>
 </ul>

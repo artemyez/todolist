@@ -1,6 +1,8 @@
 <div class="form-inline">
   <%= form_with model: Task.new  do |f| %>
-    <%= f.text_field :title, class: "form-control", placeholder: "Enter what to do", required: true %>
+    <%= f.hidden_field :list_id, value: params[:id] %>
+    <%= f.text_field :title, class: "form-control",
+          placeholder: "Enter what to do", required: true %>
     <%= f.submit "Save", class: "btn btn-primary" %>
   <% end %>
 </div>
