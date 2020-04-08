@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe List, type: :model do
   context 'validation tests' do
-    let(:list) { build(:list) }
+    let(:list) { build(:list, user: create(:user)) }
 
     it 'ensures title is present' do
       list.title = nil

@@ -1,6 +1,5 @@
 class List < ApplicationRecord
-  has_one :user
+  belongs_to :user
   has_many :tasks
-  validates :title, :user_id, presence: true
-  validates :title, uniqueness: { scope: :user_id }
+  validates :title, uniqueness: { scope: :user_id }, presence: true
 end

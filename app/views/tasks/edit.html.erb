@@ -1,12 +1,10 @@
-<div class="col-sm-3 p-3 border bg-light">
-  <%= form_with model: @task  do |f| %>
-    <div class="form-group">
-      <%= f.label "Enter your changes" %>
-      <%= f.text_field :title, class: "form-control", required: true %><br>
-      <%= f.collection_select :list_id, current_user.lists.all, :id, :title, { prompt: 'Choose list' },
-      { class: "form-control", required: true } %>
-    </div>
-      <%= f.submit "Save", class: "btn btn-primary" %>
-      <%= link_to "Back", list_path(@task.list_id), class: "btn btn-light" %>
-  <% end %>
-</div>
+<%= form_with model: @task  do |f| %>
+  <div class="form-group">
+    <%= f.label "Enter your changes" %>
+    <%= f.text_field :title, class: "form-control", required: true %><br>
+    <%= f.collection_select :list_id, current_user.lists.all, :id, :title, { prompt: 'Choose list' },
+    { class: "form-control", required: true } %>
+  </div>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= link_to "Back", list_path(@task.list_id), class: "btn btn-light" %>
+<% end %>

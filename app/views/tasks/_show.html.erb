@@ -1,7 +1,3 @@
-<% def strike_link(d) %>
-  <% link_to d.title, complete_task_path(d, d.id), method: :patch %>
-<% end %>
-
 <ul class="list-group">
   <% @list.tasks.each do |d| %>
   <li class="list-group-item">
